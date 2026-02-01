@@ -1,0 +1,27 @@
+.heading{
+    font-family: 'Cormorant Garamond', serif;
+}
+.below-text{
+    font-family: 'Work Sans', sans-serif;
+}
+
+.year-line{
+    font-family: 'Cormorant Garamond', serif;
+}
+.pattern{
+    font-family: 'Work Sans', sans-serif;
+}
+.action-text, .pattern-text, .color-text{
+    font-family: 'Work Sans', sans-serif;
+}
+.burst, .Ring, .willow, .spiral{
+     font-family: 'Work Sans', sans-serif;
+}
+#playbtn{
+    font-family: 'Work Sans', sans-serif;
+}
+.type-option.active {
+  background-color: #c74b50;
+  border-color: #d4af37;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}

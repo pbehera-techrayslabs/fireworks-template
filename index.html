@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Firework</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-[#0a0a0f] w-screen cursor-crosshair">
+    <!--relative-->
+    <canvas id="canvas" class="fixed top-0 left-0 w-full h-full  -z-10 "></canvas>
+    <div class="UI-container relative z-10 p-8">
+        <div class="flex  justify-between z-10 p-4 ">
+            <button id="eyebtn" title="Toggle UI Visibility"
+                class="cursor-pointer border h-10 w-10 py-1 px-1  border-gray-800 transform hover:border-yellow-900 hover:bg-red-950 hover:shadow-amber-800 hover:shadow-2xl transition duration-300 hover:scale-110  rounded-lg focus:bg-[#102422] focus:shadow-[#4b9d95] focus:shadow-2xl focus:transition focus:duration-300 focus:-translate-x-4">
+                <span class="size-0.5  text-[#f4e7c3]">👁</span>
+            </button>
+            <header id="hidebox">
+                <h1
+                    class="heading mt-2 bg-clip-text font-serif text-center text-[70px] font-semibold  bg-linear-to-r from-[#ddc162] -0% via-[#d4b03a] -50% to-[#d19040] -100%   text-transparent">
+                    Fireworks Composer
+                </h1>
+                <p
+                    class="below-text bg-clip-text text-center text-shadow-2xl text-[17px]  text-[#aea58d] font-light opacity-0.6 uppercase tracking-[0.15em]">
+                    Create your celebration
+                </p>
+            </header>
+            <button id="fullbtn" title="Toggle Fullscreen"
+                class="cursor-pointer  border h-12 w-12 border-gray-800 transform hover:border-yellow-900 hover:bg-red-950 hover:shadow-amber-800 hover:shadow-2xs focus:shadow-2xs transition duration-300 hover:scale-110 py-2 px-2 rounded-lg">
+                <span class="text-amber-50 text-2xl"> ⛶ </span>
+            </button>
+        </div>
+
+    </div>
+    <div class="year-line w-screen absolute top-90 text-white  text-center font-bold bg-clip-text">
+        <p><span class="year-line1 text-8xl tracking-widest opacity-5">Happy New Year</span> <span> &nbsp;&nbsp; </span>
+            <span class="year-line2 text-8xl opacity-5">2026</span>
+        </p>
+
+       
+    </div>
+    <div id="loadText" class="year-line w-screen  absolute top-90 text-white  text-center font-bold bg-clip-text">
+
+     <p   class="align-middle justify-center-safe text-[#d4b03a] z-30 text-4xl">Click anywhere to launch Fireworks</p>
+     <p   class="align-middle justify-center-safe text-[#aea58d] z-30 text-2xl mt-4 ">Choose your colors and patterns below</p>
+
+    </div>
+    <div id="hidebox1" class="control-panel fixed cursor-default w-full flex justify-center ">
+        <div
+            class="color-panel fixed   bottom-8 border border-[#ffd9001b] w-2xl flex md:flex-row flex-col flex-wrap justify-around p-4 rounded-3xl align gap-3 items-center">
+            <div class="flex gap-3 flex-col pt-2">
+                <span class="color-text text-[#c3a23a] font-semibold uppercase text-[0.65rem]">Color</span>
+                <div  class="flex gap-3 ">
+                    <div id="color-option" class="flex gap-2 "> 
+                        <button 
+                            class=" bg-[#ff5a6e] hover:shadow-[#F4E7C3] hover:shadow-lg rounded-full h-5 w-5 cursor-pointer transition-transform duration-150 ease-in hover:scale-110 focus:outline-white focus:outline-2 focus:shadow-white focus:shadow-lg"></button>
+                        <button 
+                            class="bg-[#FFD700]  hover:shadow-[#F4E7C3] hover:shadow-lg rounded-full h-5 w-5 cursor-pointer transition-transform duration-150 ease-in hover:scale-110 focus:outline-white focus:outline-2 focus:shadow-white focus:shadow-lg">
+                        </button>
+                        <button 
+                            class="bg-[#3FE0A0]  hover:shadow-[#F4E7C3] hover:shadow-lg rounded-full h-5 w-5 cursor-pointer transition-transform duration-150 ease-in hover:scale-110 focus:outline-white focus:outline-2 focus:shadow-white focus:shadow-lg">
+                        </button>
+                        <button 
+                            class="bg-[#B377FF]  hover:shadow-[#F4E7C3] hover:shadow-lg rounded-full h-5 w-5 cursor-pointer transition-transform duration-150 ease-in hover:scale-110 focus:outline-white focus:outline-2 focus:shadow-white focus:shadow-lg">
+                        </button>
+                        <button 
+                            class="bg-[#FFFEF7]  hover:shadow-[#F4E7C3] hover:shadow-lg rounded-full h-5 w-5 cursor-pointer transition-transform duration-150 ease-in hover:scale-110 focus:outline-white focus:outline-2 focus:shadow-white focus:shadow-lg"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="pattern-panel flex flex-col gap-1.5 space-x-3 py-1 ">
+                <div class="pattern-text flex"><span
+                        class="text-[#c3a23a] font-semibold uppercase text-[0.65rem]">pattern</span></div>
+                <div class="flex gap-2 ">
+                    <button data-type="burst"
+                        class="type-option burst border font-semibold py-2 px-3  border-[#c74b50] bg-[#30111a] hover:border-[#c74b50] hover:shadow-[#c72e23] hover:bg-[#4e1e2b] hover:shadow-2xl active:bg-[#d94f53] active:border-[#d4af37] focus:bg-[#d85256] focus:shadow-[#fc7176] focus:border-[#d4af37]  focus:outline-0  rounded-xl text-[#F4E7C3] text-xs cursor-pointer uppercase transition-transform duration-150 ease-in hover:-translate-y-0.5">Burst</button>
+                    <button data-type="Ring"
+                        class="type-option Ring font-semibold border py-2 px-3  border-[#c74b50] bg-[#30111a] hover:border-[#c74b50] hover:shadow-[#c72e23] hover:bg-[#4e1e2b] hover:shadow-2xl active:bg-[#d94f53] active:border-[#d4af37] focus:bg-[#d85256] focus:shadow-[#d85256] focus:border-[#d4af37] focus:shadow-2xl focus:outline-0  rounded-xl text-[#F4E7C3] text-xs cursor-pointer uppercase transition-transform duration-150 ease-in hover:-translate-y-0.5">Ring</button>
+                    <button data-type="willow"
+                        class="type-option willow font-semibold py-2 px-3 border border-[#c74b50] bg-[#30111a]  hover:border-[#c74b50] hover:shadow-[#c72e23] hover:bg-[#4e1e2b] hover:shadow-2xl active:bg-[#c74b50] active:border-[#d4af37] focus:bg-[#C74B50] focus:shadow-[#c6494e99] focus:border-[#d4af37] focus:outline-0 rounded-xl text-[#F4E7C3] text-xs cursor-pointer uppercase transition-transform duration-150 ease-in hover:-translate-y-0.5">Willow</button>
+                    <button data-type="spiral"
+                        class="type-option spiral font-semibold py-2 px-3 border border-[#c74b50] bg-[#30111a]  hover:border-[#c74b50] hover:shadow-[#c72e23] hover:bg-[#4e1e2b]  active:bg-[#c74b50] active:border-[#d4af37] focus:bg-[#C74B50] focus:shadow-[#c72e23] focus:shadow-2xl focus:border-[#d4af37] focus:outline-0 rounded-xl text-[#F4E7C3] text-xs cursor-pointer uppercase transition-transform duration-150 ease-in hover:-translate-y-0.5">Spiral</button>
+                </div>
+            </div>
+            <div class="action-panel flex flex-col gap-1.5  space-x-3 py-3">
+                <div class="action-text flex gap-1 flex-col pt-2"><span
+                        class=" uppercase text-[#c09f33] text-[0.65rem] font-semibold"> Actions </span></div>
+                <button id="autoshow"
+                    class="border border-[#d4af37] rounded-xl py-2 px-5 cursor-pointer bg-linear-to-tl from-[#912a38] via-[#aa3943] to-[#c2484e] from-0% via-50% to-100% hover:bg-linear-to-tl hover:from-[#c2484e] hover:via-[#aa3943] hover:to-[#912a38] hover:from-0% hover:via-50% hover:to-100% transition-transform duration-150 ease-in hover:-translate-y-0.5 hover:shadow-[#5a502d] hover:shadow-lg text-[#f4e7c3] font-semibold text-xs">
+                    ▶ PLAY </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="custom.js"></script>
+</body>
+
+</html>
