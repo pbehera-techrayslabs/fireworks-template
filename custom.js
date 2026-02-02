@@ -1,4 +1,46 @@
 
+
+const btn2 = document.getElementById("eyebtn");
+const hidebox = document.getElementById("hidebox");
+const hidebox1 = document.getElementById("hidebox1");
+const hidebtn = document.getElementById("fullbtn")
+btn2.addEventListener("click", () => {
+  hidebox.classList.toggle('hidden');
+  hidebox1.classList.toggle('hidden');
+  hidebtn.classList.toggle('hidden');
+});
+
+
+
+btn2.addEventListener("click", () => {
+  this.classList.toggle('active-state');
+  this.classList.toggle('hover-state');
+  this.classList.toggle('focus-state');
+});
+
+
+document.getElementById('fullbtn').addEventListener('click', () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+});
+
+
+
+
+const loadText= document.querySelector("#loadText")
+document.addEventListener("DOMContentLoaded",()=>{
+  setTimeout(()=>{
+  loadText.classList.add("hidden");
+},2000);
+  loadText.classList.transitionDuration= '6s';
+});
+
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -190,43 +232,3 @@ autoBtn.addEventListener("click", () => {
 
 
 
-
-const btn2 = document.getElementById("eyebtn");
-const hidebox = document.getElementById("hidebox");
-const hidebox1 = document.getElementById("hidebox1");
-const hidebtn = document.getElementById("fullbtn")
-btn2.addEventListener("click", () => {
-  hidebox.classList.toggle('hidden');
-  hidebox1.classList.toggle('hidden');
-  hidebtn.classList.toggle('hidden');
-});
-
-
-
-btn2.addEventListener("click", () => {
-  this.classList.toggle('active-state');
-  this.classList.toggle('hover-state');
-  this.classList.toggle('focus-state');
-});
-
-
-document.getElementById('fullbtn').addEventListener('click', () => {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen();
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
-  }
-});
-
-
-
-
-const loadText= document.querySelector("#loadText")
-document.addEventListener("DOMContentLoaded",()=>{
-  setTimeout(()=>{
-  loadText.classList.add("hidden");
-},2000);
-  loadText.classList.transitionDuration= '6s';
-});
