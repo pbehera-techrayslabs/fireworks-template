@@ -45,10 +45,8 @@ class Rocket {
     ctx.fillRect(this.x, this.y, 2, 10);
   }
 }
-
-
 class Particle {
-  constructor(x, y, angle, speed, life) {
+  constructor(x,y,angle,speed,life) {
     this.x = x;
     this.y = y;
     this.vx = Math.cos(angle) * speed;
@@ -63,7 +61,7 @@ class Particle {
     this.x += this.vx;
     this.y += this.vy;
     this.life--;
-    this.opacity = this.life / 80;
+    this.opacity = this.life / 100;
   }
 
   draw() {
@@ -230,5 +228,5 @@ document.addEventListener("DOMContentLoaded",()=>{
   setTimeout(()=>{
   loadText.classList.add("hidden");
 },2000);
-  loadText.classList.transitionDuration= '2s';
+  loadText.classList.transitionDuration= '6s';
 });
